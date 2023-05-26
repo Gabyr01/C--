@@ -7,6 +7,7 @@ void printArray(int arr[], int SIZE){
     for(int i = 0; i<=SIZE-1; i++){
         cout<<arr[i]<<" ";
     }
+    cout<<endl;
 
 }
 
@@ -26,25 +27,32 @@ void reverseArray(int arr[], int SIZE)
     cout<<endl;
     printArray(arr,SIZE);
 }
-int maxANDmin(int arr[], int SIZE){
+void maxANDmin(int arr[], int SIZE){
     int min = 0;
     int max = 1;
 
     for(int i = 0; i <= SIZE-1; i++)
     {
-        if(a)
+        if(arr[i] < arr[min] )
+        {
+            min = i;
+        }
+        if(arr[i] > arr[max])
+        {
+            max = i;
+        }
     }
-
+    cout<<"min: "<<arr[min]<<endl;
+    cout<<"max: "<<arr[max]<<endl;
 }
 int main(){
 
     int SIZE = 5;
-    int arr[SIZE] = {1,2,3,4,5};
+    int arr[SIZE] = {-11,10,-5,4,50};
     int temp;
 
     reverseArray(arr,SIZE);
-    
-  
 
-
+    printArray(arr,SIZE);
+    maxANDmin(arr, SIZE);
 }
